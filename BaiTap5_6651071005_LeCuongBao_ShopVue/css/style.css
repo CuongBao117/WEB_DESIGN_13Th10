@@ -1,0 +1,63 @@
+/* CSS bổ sung cho Shop Phụ Kiện Vue.js */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Custom scrollbar thanh lịch */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Card hover animation */
+.product-card {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 28px -8px rgba(37, 99, 235, 0.12), 0 8px 12px -6px rgba(0, 0, 0, 0.04);
+}
+
+/* Badge số lượng giỏ hàng rung nhẹ khi thêm hàng */
+@keyframes cartPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+.cart-bump {
+    animation: cartPulse 0.3s ease-in-out;
+}
+
+/* Transition cho danh sách trong giỏ hàng */
+.cart-item-enter-active,
+.cart-item-leave-active {
+    transition: all 0.3s ease;
+}
+
+.cart-item-enter-from {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.cart-item-leave-to {
+    opacity: 0;
+    transform: translateX(-20px);
+}
